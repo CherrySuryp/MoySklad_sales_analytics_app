@@ -10,6 +10,8 @@ class Settings(BaseSettings):
 
     MODE: Literal["DEV", "TEST", "PROD"]
 
+    API_SECRET: str
+
     DB_HOST: str
     DB_PORT: int
     DB_USER: str

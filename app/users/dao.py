@@ -1,5 +1,5 @@
 from fastapi import HTTPException, status
-from sqlalchemy import insert, select
+from sqlalchemy import insert, select, update
 from sqlalchemy.exc import IntegrityError
 
 from app.dao.dao import BaseDAO
@@ -51,3 +51,15 @@ class UsersDAO(BaseDAO):
             query = select(UsersTelegram)
             result = await session.execute(query)
             return result.scalars()
+
+    @classmethod
+    async def update_token(cls, telegram_id, new_token):
+        async with async_session_maker() as session:
+            query = (
+                update(cls.model).
+                where(cls.model.telegram_id == telegram_id).
+                values(ms_token=new_token)
+            )
+            await session.execute(query)
+            await session.commit()
+            
