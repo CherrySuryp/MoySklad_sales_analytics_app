@@ -3,8 +3,8 @@ from sqlalchemy import Column, Integer, String, Boolean
 from app.database import Base
 
 
-class Users(Base):
-    __tablename__ = 'users'
+class UsersTelegram(Base):
+    __tablename__ = 'telegram_users'
 
     id = Column(Integer, primary_key=True)
     telegram_id = Column(Integer, nullable=False)

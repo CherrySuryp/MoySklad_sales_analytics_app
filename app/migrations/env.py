@@ -9,7 +9,7 @@ sys.path.insert(0, dirname(dirname(dirname(abspath(__file__)))))
 
 from app.config import DATABASE_URL
 from app.database import Base  # noqa
-from app.users.models import Users # noqa
+from app.users.models import UsersTelegram # noqa
 from app.sales.models import Sales # noqa
 from app.sales.items.models import Items # noqa
 
