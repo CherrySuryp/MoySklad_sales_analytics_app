@@ -26,12 +26,6 @@ async def reg_user(user_data: SRegUser):
     await UsersDAO.add(user_data.telegram_id, user_data.name, user_data.email, user_data.ms_token)
 
 
-@router.get("")
-async def get_users():
-    users = await UsersDAO.find_all()
-    return users
-
-
 @router.get('/{user_id}')
 async def get_user_by_id(user_id: int) -> SUser:
     existing_user = await UsersDAO.find_one_or_none(id=user_id)
@@ -58,3 +52,9 @@ async def update_ms_token(
             detail='User does not exist'
         )
     await UsersDAO.update_token(user_id, token)
+
+
+@router.get("")
+async def get_users():
+    users = await UsersDAO.find_all()
+    return users
