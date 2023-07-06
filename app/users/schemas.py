@@ -7,15 +7,15 @@ class SRegUser(BaseModel):
     telegram_id: int
     name: str
     email: Optional[EmailStr] = None
-    ms_token: str
+    ms_token: Optional[str] = None
 
 
-class STgUser(BaseModel):
+class SUser(BaseModel):
     id: int = 100
     telegram_id: int = 5768234
     name: str = "Mark"
     email: Optional[EmailStr] = None
-    ms_token: str = "kubqerlfbi83768"
+    ms_token: Optional[str] = "kubqerlfbi83768"
     is_available: bool = True
 
     class Config:
