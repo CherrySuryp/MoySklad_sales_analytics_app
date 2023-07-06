@@ -1,10 +1,12 @@
-from typing import Annotated
-from fastapi import APIRouter, status, Request, Header, Depends
+import asyncio
+from fastapi import APIRouter, status, Depends
 from fastapi.exceptions import HTTPException
 
+from app.config import settings
 from app.users.dao import UsersDAO
 from app.users.dependencies import check_api_token
 from app.users.schemas import SRegUser, STgUser
+from fastapi_cache.decorator import cache
 
 router = APIRouter(
     prefix='/users',
@@ -30,7 +32,9 @@ async def reg_user(user_data: SRegUser):
     '/{telegram_id}',
     dependencies=[Depends(check_api_token)]
 )
+@cache(expire=settings.REDIS_EXPIRE)
 async def get_telegram_user(telegram_id: int) -> STgUser:
+    await asyncio.sleep(5)
     existing_user = await UsersDAO.find_one_or_none(telegram_id=telegram_id)
     if not existing_user:
         raise HTTPException(

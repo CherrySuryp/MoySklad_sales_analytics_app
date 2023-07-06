@@ -18,6 +18,10 @@ class Settings(BaseSettings):
     DB_PASS: str
     DB_NAME: str
 
+    REDIS_HOST: str
+    REDIS_PORT: int
+    REDIS_EXPIRE: int
+
     @root_validator
     def get_database_url(cls, v):
         v["DATABASE_URL"] = (
