@@ -7,6 +7,6 @@ async def check_api_token(x_api_token: Annotated[str | None, Header()], request:
     print(request.client.host)
     if x_api_token != settings.API_SECRET:
         raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
+            status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Wrong API access token"
         )

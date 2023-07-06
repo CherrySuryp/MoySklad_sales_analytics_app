@@ -51,16 +51,24 @@ class UsersDAO(BaseDAO):
     @classmethod
     async def find_all(cls):
         async with async_session_maker() as session:
-            query = select(Users)
+            query = select(
+                Users.id,
+                Users.telegram_id,
+                Users.name,
+                Users.email,
+                Users.ms_token,
+                Users.is_available,
+                Users.date_registered,
+            )
             result = await session.execute(query)
             return result.mappings().all()
 
     @classmethod
-    async def update_token(cls, telegram_id, new_token):
+    async def update_token(cls, user_id, new_token):
         async with async_session_maker() as session:
             query = (
                 update(cls.model).
-                where(cls.model.telegram_id == telegram_id).
+                where(cls.model.id == user_id).
                 values(ms_token=new_token)
             )
             await session.execute(query)

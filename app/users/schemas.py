@@ -1,4 +1,5 @@
 from typing import Optional
+from datetime import date
 
 from pydantic import BaseModel, EmailStr
 
@@ -11,12 +12,13 @@ class SRegUser(BaseModel):
 
 
 class SUser(BaseModel):
-    id: int = 100
-    telegram_id: int = 5768234
-    name: str = "Mark"
-    email: Optional[EmailStr] = None
-    ms_token: Optional[str] = "kubqerlfbi83768"
-    is_available: bool = True
+    id: int
+    telegram_id: int
+    name: str
+    email: Optional[EmailStr]
+    ms_token: Optional[str]
+    is_available: bool
+    date_registered: date
 
     class Config:
         orm_mode = True
