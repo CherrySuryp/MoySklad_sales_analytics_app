@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Column, Integer, String, Boolean, Date
 
 from app.database import Base
 
@@ -10,8 +10,9 @@ class Users(Base):
     telegram_id = Column(Integer, nullable=False)
     name = Column(String, nullable=False)
     email = Column(String, nullable=True)
-    ms_token = Column(String, unique=True)
+    ms_token = Column(String, unique=True, nullable=True)
     is_available = Column(Boolean, default=True, nullable=False)
+    date_registered = Column(Date)
 
     def __str__(self):
         return f"User: {self.email}"

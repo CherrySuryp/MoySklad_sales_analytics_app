@@ -10,11 +10,17 @@ class Settings(BaseSettings):
 
     MODE: Literal["DEV", "TEST", "PROD"]
 
+    API_SECRET: str
+
     DB_HOST: str
     DB_PORT: int
     DB_USER: str
     DB_PASS: str
     DB_NAME: str
+
+    REDIS_HOST: str
+    REDIS_PORT: int
+    REDIS_EXPIRE: int
 
     @root_validator
     def get_database_url(cls, v):
