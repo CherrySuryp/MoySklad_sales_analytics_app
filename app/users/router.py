@@ -2,7 +2,7 @@ from fastapi import APIRouter, status, Depends
 from fastapi.exceptions import HTTPException
 
 from app.users.dao import UsersDAO
-from app.users.dependencies import check_api_token
+from app.dependencies import check_api_token
 from app.users.schemas import SRegUser, SUser
 
 router = APIRouter(
