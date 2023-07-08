@@ -33,12 +33,12 @@ class UsersDAO(BaseDAO):
         async with async_session_maker() as session:
             query = select(
                 Users.id,
-                Users.telegram_id,
-                Users.name,
                 Users.email,
-                Users.ms_token,
-                Users.is_available,
+                Users.password,
+                Users.name,
                 Users.date_registered,
+                Users.ms_token,
+                Users.verified
             )
             result = await session.execute(query)
             return result.mappings().all()

@@ -3,7 +3,7 @@ from app.dependencies import check_api_token
 from app.users.dao import UsersDAO
 
 router = APIRouter(
-    prefix='/ms',
+    prefix='/MoySklad',
     tags=['Moy Sklad'],
     dependencies=Depends(check_api_token)
 )

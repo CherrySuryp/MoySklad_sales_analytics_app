@@ -1,12 +1,15 @@
+from typing import Annotated
+
 from fastapi import APIRouter, status, Depends, Response
 from fastapi.exceptions import HTTPException
+from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 
 from app.users.auth import encrypt_password, auth_user, create_jwt_token
 from app.users.dao import UsersDAO
 from app.dependencies import check_api_token
+from app.users.dependencies import get_current_user
+from app.users.models import Users
 from app.users.schemas import SRegUser, SUser
-
-from datetime import datetime, timedelta
 
 
 router = APIRouter(
@@ -29,6 +32,7 @@ async def reg_user(user_data: SRegUser):
         )
     hashed_passwd = encrypt_password(user_data.password)
     await UsersDAO.add(email=user_data.email, password=hashed_passwd)
+    return {"Detail": "User Registered"}
 
 
 @router.post(
@@ -37,34 +41,33 @@ async def reg_user(user_data: SRegUser):
 )
 async def login_user(user_data: SRegUser, response: Response):
     user = await auth_user(user_data.email, user_data.password)
-    access_token = create_jwt_token({"user_id": str(user.id)})
+    access_token = create_jwt_token({"sub": str(user.id)})
     response.set_cookie(
         "MS_Analytics",
         access_token,
         httponly=True,
     )
-    return {"JWT Token": access_token}
 
 
-@router.get('/{user_id}')
-async def get_user_by_id(user_id: int) -> SUser:
-    existing_user = await UsersDAO.find_one_or_none(id=user_id)
-    if not existing_user:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail='User does not exist'
-        )
-    return existing_user
+@router.post("/logout")
+async def logout_user(response: Response):
+    response.delete_cookie('MS_Analytics')
+
+
+@router.get("/me")
+async def get_current_user(user: Users = Depends(get_current_user)):
+    return user
 
 
 @router.put(
-    '/{user_id}/update_token',
+    '/update_ms_token',
     status_code=status.HTTP_202_ACCEPTED
 )
 async def update_ms_token(
-        user_id: int,
-        token: str
+        token: str,
+        user: Users = Depends(get_current_user),
 ):
+    user_id = user.id
     existing_user = await UsersDAO.find_one_or_none(id=user_id)
     if not existing_user:
         raise HTTPException(
