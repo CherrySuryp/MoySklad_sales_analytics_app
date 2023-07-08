@@ -15,38 +15,18 @@ class UsersDAO(BaseDAO):
     @classmethod
     async def add(
             cls,
-            telegram_id: int,
-            name: str,
             email: str,
-            ms_token: str,
-            is_available: bool = True,
+            password: str,
     ):
-        try:
-            async with async_session_maker() as session:
-                query = insert(cls.model)\
-                    .values(
-                    telegram_id=telegram_id,
-                    name=name,
-                    email=email,
-                    ms_token=ms_token,
-                    is_available=is_available,
-                    date_registered=datetime.utcnow()
-                )
-                await session.execute(query)
-                await session.commit()
-
-        except (IntegrityError, Exception):
-
-            if IntegrityError:
-                raise HTTPException(
-                    status_code=status.HTTP_409_CONFLICT,
-                    detail="Wrong MS token format or it's already in use"
-                )
-            elif Exception:
-                raise HTTPException(
-                    status_code=status.HTTP_409_CONFLICT,
-                    detail="An error occurred"
-                )
+        async with async_session_maker() as session:
+            query = insert(cls.model) \
+                .values(
+                email=email,
+                password=password,
+                date_registered=datetime.utcnow()
+            )
+            await session.execute(query)
+            await session.commit()
 
     @classmethod
     async def find_all(cls):
@@ -73,4 +53,3 @@ class UsersDAO(BaseDAO):
             )
             await session.execute(query)
             await session.commit()
-            

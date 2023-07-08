@@ -12,6 +12,9 @@ class Settings(BaseSettings):
 
     API_SECRET: str
 
+    JWT_SECRET: str
+    JWT_ENCODING: str
+
     DB_HOST: str
     DB_PORT: int
     DB_USER: str
