@@ -2,7 +2,7 @@ from fastapi import HTTPException, status
 from sqlalchemy import insert, select, update
 from sqlalchemy.exc import IntegrityError
 
-from app.dao.dao import BaseDAO
+from app.dao.base import BaseDAO
 from app.database import async_session_maker
 from app.users.models import Users
 
@@ -38,7 +38,8 @@ class UsersDAO(BaseDAO):
                 Users.name,
                 Users.date_registered,
                 Users.ms_token,
-                Users.verified
+                Users.telegram_id,
+                Users.verified,
             )
             result = await session.execute(query)
             return result.mappings().all()

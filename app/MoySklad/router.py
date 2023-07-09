@@ -1,14 +1,15 @@
 from fastapi import APIRouter, Depends
-from app.dependencies import check_api_token
-from app.users.dao import UsersDAO
+from app.users.dependencies import get_current_user
+from app.users.schemas import SUser
+from fastapi_cache.decorator import cache
 
 router = APIRouter(
     prefix='/MoySklad',
-    tags=['Moy Sklad'],
-    dependencies=Depends(check_api_token)
+    tags=['Moy Sklad']
 )
 
 
-@router.post('/{user_id}/update_items')
-def get_items_from_ms(user_id: int):
-    ms_token = UsersDAO.find_one_or_none(id=user_id)
+@router.post('/update_items')
+@cache(expire=30)
+def get_items_from_ms(user_data: SUser = Depends(get_current_user)):
+    return user_data.id

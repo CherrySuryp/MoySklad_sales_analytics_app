@@ -1,21 +1,16 @@
-from typing import Annotated
-
 from fastapi import APIRouter, status, Depends, Response
 from fastapi.exceptions import HTTPException
-from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 
 from app.users.auth import encrypt_password, auth_user, create_jwt_token
 from app.users.dao import UsersDAO
-from app.dependencies import check_api_token
+from app.dependencies import check_api_token  # noqa
 from app.users.dependencies import get_current_user
 from app.users.models import Users
 from app.users.schemas import SRegUser, SUser
 
-
 router = APIRouter(
     prefix='/users',
     tags=['Users'],
-    dependencies=[Depends(check_api_token)]
 )
 
 
@@ -47,6 +42,7 @@ async def login_user(user_data: SRegUser, response: Response):
         access_token,
         httponly=True,
     )
+    return {"access_token": access_token}
 
 
 @router.post("/logout")
@@ -77,7 +73,7 @@ async def update_ms_token(
     await UsersDAO.update_token(user_id, token)
 
 
-@router.get("")
-async def get_users():
+@router.get("", dependencies=[Depends(check_api_token)])
+async def get_users() -> list[SUser]:
     users = await UsersDAO.find_all()
     return users
