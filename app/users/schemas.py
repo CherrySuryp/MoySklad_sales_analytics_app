@@ -5,20 +5,19 @@ from pydantic import BaseModel, EmailStr
 
 
 class SRegUser(BaseModel):
-    telegram_id: int
-    name: str
-    email: Optional[EmailStr] = None
-    ms_token: Optional[str] = None
+    email: EmailStr
+    password: str
 
 
 class SUser(BaseModel):
     id: int
-    telegram_id: int
-    name: str
-    email: Optional[EmailStr]
-    ms_token: Optional[str]
-    is_available: bool
+    email: EmailStr
+    password: str
+    name: Optional[str]
     date_registered: date
+    ms_token: Optional[str]
+    telegram_id: Optional[int]
+    verified: bool
 
     class Config:
         orm_mode = True
