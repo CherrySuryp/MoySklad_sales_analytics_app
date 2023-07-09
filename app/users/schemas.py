@@ -18,6 +18,7 @@ class SUser(BaseModel):
     ms_token: Optional[str]
     telegram_id: Optional[int]
     verified: bool
+    items_limit: int
 
     class Config:
         orm_mode = True

@@ -4,6 +4,8 @@ from fastapi_cache.backends.redis import RedisBackend
 
 from app.users.router import router as users_router
 from app.MoySklad.router import router as ms_router
+from app.MoySklad.items.router import router as ms_items_router
+
 from redis import asyncio as aioredis
 from app.config import settings
 
@@ -11,6 +13,7 @@ app = FastAPI()
 
 app.include_router(users_router)
 app.include_router(ms_router)
+app.include_router(ms_items_router)
 
 
 @app.on_event("startup")

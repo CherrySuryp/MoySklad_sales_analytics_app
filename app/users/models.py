@@ -14,3 +14,4 @@ class Users(Base):
     ms_token = Column(String)
     telegram_id = Column(Integer)
     verified = Column(Boolean, default=False, nullable=False)
+    items_limit = Column(Integer, default=1000, nullable=False)
