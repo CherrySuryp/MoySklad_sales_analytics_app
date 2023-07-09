@@ -1,38 +1,28 @@
-from typing import Literal
+from dotenv import load_dotenv
+import os
 
-from pydantic import BaseSettings, root_validator
-from sqlalchemy import NullPool
+load_dotenv()
 
 
-class Settings(BaseSettings):
-    class Config:
-        env_file = ".env"
+class Settings:
+    MODE = os.environ.get('MODE')
 
-    MODE: Literal["DEV", "TEST", "PROD"]
+    API_SECRET = os.environ.get('API_SECRET')
 
-    API_SECRET: str
+    JWT_SECRET = os.environ.get('JWT_SECRET')
+    JWT_ENCODING = os.environ.get('JWT_ENCODING')
 
-    JWT_SECRET: str
-    JWT_ENCODING: str
+    DB_HOST = os.environ.get('DB_HOST')
+    DB_PORT = os.environ.get('DB_PORT')
+    DB_USER = os.environ.get('DB_USER')
+    DB_PASS = os.environ.get('DB_PASS')
+    DB_NAME = os.environ.get('DB_NAME')
 
-    DB_HOST: str
-    DB_PORT: int
-    DB_USER: str
-    DB_PASS: str
-    DB_NAME: str
+    REDIS_HOST = os.environ.get('REDIS_HOST')
+    REDIS_PORT = os.environ.get('REDIS_PORT')
+    REDIS_EXPIRE = os.environ.get('REDIS_EXPIRE')
 
-    REDIS_HOST: str
-    REDIS_PORT: int
-    REDIS_EXPIRE: int
-
-    @root_validator
-    def get_database_url(cls, v):
-        v["DATABASE_URL"] = (
-            f"postgresql+asyncpg://"
-            f"{v['DB_USER']}:{v['DB_PASS']}@{v['DB_HOST']}:"
-            f"{v['DB_PORT']}/{v['DB_NAME']}"
-        )
-        return v
+    DATABASE_URL = f"postgresql+asyncpg://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
 
 settings = Settings()
