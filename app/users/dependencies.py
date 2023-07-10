@@ -1,5 +1,6 @@
 import asyncio
 
+from fastapi_cache import JsonCoder
 from jose import jwt, JWTError
 from app.config import settings
 from app.users.dao import UsersDAO
@@ -24,8 +25,9 @@ async def get_current_user(token: str = Depends(get_token)):
     if not user_id:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
 
-    @cache(expire=60)
+    @cache(expire=60, coder=JsonCoder)
     async def get_user(uid: int):
+        await asyncio.sleep(2)
         user = await UsersDAO.find_one_or_none(id=int(uid))
         if not user:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)

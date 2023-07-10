@@ -8,11 +8,9 @@ from app.tasks.celery_app import celery
 @celery.task()
 def get_items(user_id: int, ms_token: str, user_limit: int):
     async def async_get_items():
+
         offset = 0
-        content = []
-
-        while offset <= user_limit:
-
+        while offset < user_limit:
             # Getting items from MoySklad API
             with requests.session() as session:
                 request = session.get(
@@ -27,6 +25,7 @@ def get_items(user_id: int, ms_token: str, user_limit: int):
                 ).json()['rows']
 
             request = request
+            content = []
 
             if len(request) > 0:
                 for i in range(len(request)):
@@ -38,16 +37,14 @@ def get_items(user_id: int, ms_token: str, user_limit: int):
                             'item_external_code': request[i]['externalCode'],
                             'item_name': request[i]['name'],
                         }
-
                         item_exists = await ItemsDAO.find_one_or_none(
                             ms_id=item_data['ms_id'],
-                            user_id=1
+                            user_id=user_id
                         )
-
-                        if item_exists is not None:
-                            pass
-                        else:
+                        if not item_exists:
                             content.append(item_data)
+                        else:
+                            pass
                     except KeyError:
                         pass
 
@@ -56,12 +53,9 @@ def get_items(user_id: int, ms_token: str, user_limit: int):
                     await ItemsDAO.add_items(content)
                     print(f"Added {len(content)} items")
                 else:
+                    offset += 1000
                     print('No items to add')
             else:
                 break
 
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    loop.run_until_complete(async_get_items())
-    loop.close()
-
+    asyncio.get_event_loop().run_until_complete(async_get_items())
