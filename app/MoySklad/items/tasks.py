@@ -5,65 +5,63 @@ from app.MoySklad.items.dao import ItemsDAO
 from app.tasks.celery_app import celery
 
 
-async def get_items(user_id: int, ms_token: str, user_limit: int):
-    offset = 0
-    while offset <= user_limit:
+@celery.task()
+def get_items(user_id: int, ms_token: str, user_limit: int):
+    async def async_get_items():
+        offset = 0
         content = []
 
-        # Getting items from MoySklad API
-        with requests.session() as session:
-            request = session.get(
-                "https://online.moysklad.ru/api/remap/1.2/entity/assortment",
-                headers={
-                    "Authorization": f"Bearer {ms_token}"
-                },
-                params={
-                    'offset': offset,
-                    'limit': user_limit,
-                }
-            ).json()['rows']
+        while offset <= user_limit:
 
-        request = request
-
-        if len(request) > 0:
-            for i in range(len(request)):
-                try:
-                    item_data = {
-                        'user_id': user_id,
-                        'ms_id': request[i]['id'],
-                        'item_code': request[i]['code'],
-                        'item_external_code': request[i]['externalCode'],
-                        'item_name': request[i]['name'],
+            # Getting items from MoySklad API
+            with requests.session() as session:
+                request = session.get(
+                    "https://online.moysklad.ru/api/remap/1.2/entity/assortment",
+                    headers={
+                        "Authorization": f"Bearer {ms_token}"
+                    },
+                    params={
+                        'offset': offset,
+                        'limit': user_limit,
                     }
+                ).json()['rows']
 
-                    item_exists = await ItemsDAO.find_one_or_none(
-                        ms_id=item_data['ms_id'],
-                        user_id=1
-                    )
+            request = request
 
-                    if item_exists is not None:
+            if len(request) > 0:
+                for i in range(len(request)):
+                    try:
+                        item_data = {
+                            'user_id': user_id,
+                            'ms_id': request[i]['id'],
+                            'item_code': request[i]['code'],
+                            'item_external_code': request[i]['externalCode'],
+                            'item_name': request[i]['name'],
+                        }
+
+                        item_exists = await ItemsDAO.find_one_or_none(
+                            ms_id=item_data['ms_id'],
+                            user_id=1
+                        )
+
+                        if item_exists is not None:
+                            pass
+                        else:
+                            content.append(item_data)
+                    except KeyError:
                         pass
-                    else:
-                        content.append(item_data)
-                except KeyError:
-                    pass
 
-            if len(content) > 0:
-                offset += 1000
-                asyncio.run(ItemsDAO.add_items(content))
-                print(f"Added {len(content)} items")
+                if len(content) > 0:
+                    offset += 1000
+                    await ItemsDAO.add_items(content)
+                    print(f"Added {len(content)} items")
+                else:
+                    print('No items to add')
             else:
-                print('No items to add')
-        else:
-            break
+                break
 
-
-async def async_function(param):
-    print('do something')
-
-
-@celery.task()
-def celery_task(param):
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
-    return loop.run_until_complete(async_function(param))
+    loop.run_until_complete(async_get_items())
+    loop.close()
+

@@ -20,16 +20,16 @@ async def get_current_user(token: str = Depends(get_token)):
     except JWTError:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT)
 
+    user_id: str = payload.get('sub')
+    if not user_id:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
+
     @cache(expire=60)
     async def get_user(uid: int):
         user = await UsersDAO.find_one_or_none(id=int(uid))
         if not user:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
         return user
-
-    user_id: str = payload.get('sub')
-    if not user_id:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
 
     return await get_user(user_id)
 
