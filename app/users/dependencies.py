@@ -21,11 +21,11 @@ async def get_current_user(token: str = Depends(get_token)):
     except JWTError:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT)
 
-    user_id: str = payload.get('sub')
+    user_id: int = payload.get('sub')
     if not user_id:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
 
-    @cache(expire=60, coder=JsonCoder)
+    @cache(expire=5, coder=JsonCoder)
     async def get_user(uid: int):
         await asyncio.sleep(2)
         user = await UsersDAO.find_one_or_none(id=int(uid))

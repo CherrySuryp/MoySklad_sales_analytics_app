@@ -8,7 +8,7 @@ from app.tasks.celery_app import celery
 @celery.task()
 def get_items(user_id: int, ms_token: str, user_limit: int):
     async def async_get_items():
-
+        print(f"User limit {user_limit}")
         offset = 0
         while offset < user_limit:
             # Getting items from MoySklad API
@@ -23,10 +23,12 @@ def get_items(user_id: int, ms_token: str, user_limit: int):
                         'limit': user_limit,
                     }
                 ).json()['rows']
+                session.close()
 
             request = request
             content = []
 
+            print(len(request))
             if len(request) > 0:
                 for i in range(len(request)):
                     try:
