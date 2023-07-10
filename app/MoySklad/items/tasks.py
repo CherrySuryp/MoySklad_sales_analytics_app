@@ -3,12 +3,9 @@ import asyncio
 import requests
 from app.MoySklad.items.dao import ItemsDAO
 from app.tasks.celery_app import celery
-from app.users.schemas import SUser
 
 
-@celery.task()
 async def get_items(user_id: int, ms_token: str, user_limit: int):
-
     offset = 0
     while offset <= user_limit:
         content = []
@@ -53,9 +50,20 @@ async def get_items(user_id: int, ms_token: str, user_limit: int):
 
             if len(content) > 0:
                 offset += 1000
-                await ItemsDAO.add_items(content)
+                asyncio.run(ItemsDAO.add_items(content))
                 print(f"Added {len(content)} items")
             else:
                 print('No items to add')
         else:
             break
+
+
+async def async_function(param):
+    print('do something')
+
+
+@celery.task()
+def celery_task(param):
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    return loop.run_until_complete(async_function(param))
