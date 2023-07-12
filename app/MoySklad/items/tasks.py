@@ -8,8 +8,18 @@ from app.tasks.celery_app import celery
 @celery.task()
 def get_items(user_id: int, ms_token: str, user_limit: int):
     async def async_get_items():
+
         print(f"User limit {user_limit}")
+
+        # I did this construction, because maximum limit of items is 1000
+        # If we call it with limit > 1000 than we'll get an error from MoySklad API
+        if user_limit >= 1000:
+            items_limit = 1000
+        else:
+            items_limit = user_limit
+
         offset = 0
+
         while offset < user_limit:
             # Getting items from MoySklad API
             with requests.session() as session:
@@ -20,15 +30,14 @@ def get_items(user_id: int, ms_token: str, user_limit: int):
                     },
                     params={
                         'offset': offset,
-                        'limit': user_limit,
+                        'limit': items_limit,
                     }
                 ).json()['rows']
-                session.close()
 
             request = request
             content = []
 
-            print(len(request))
+            print(f'Received {len(request)} item(s)')
             if len(request) > 0:
                 for i in range(len(request)):
                     try:
@@ -48,12 +57,13 @@ def get_items(user_id: int, ms_token: str, user_limit: int):
                         else:
                             pass
                     except KeyError:
+                        print(f"Item : {request[i]['name']} excluded from list due error")
                         pass
 
                 if len(content) > 0:
                     offset += 1000
                     await ItemsDAO.add_items(content)
-                    print(f"Added {len(content)} items")
+                    print(f"Added {len(content)} item(s)")
                 else:
                     offset += 1000
                     print('No items to add')
