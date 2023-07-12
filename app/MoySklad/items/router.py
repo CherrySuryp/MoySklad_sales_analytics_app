@@ -5,8 +5,8 @@ from app.users.dependencies import get_current_user
 from app.users.schemas import SUser
 
 router = APIRouter(
-    prefix='/ms/items',
-    tags=['Items'],
+    prefix='/MoySklad/items',
+    tags=['Moy Sklad'],
 )
 
 

@@ -8,6 +8,6 @@ celery = Celery(
     include=[
         "app.MoySklad.tasks",
         "app.MoySklad.items.tasks",
-        "app.MoySklad.sales.tasks",
+        "app.MoySklad.orders.tasks",
     ],
 )

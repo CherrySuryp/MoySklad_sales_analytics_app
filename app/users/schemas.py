@@ -19,6 +19,7 @@ class SUser(BaseModel):
     telegram_id: Optional[int]
     verified: bool
     items_limit: int
+    max_time_range: int
 
     class Config:
         orm_mode = True

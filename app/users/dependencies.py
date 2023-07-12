@@ -31,7 +31,11 @@ async def get_current_user(token: str = Depends(get_token)):
         user = await UsersDAO.find_one_or_none(id=int(uid))
         if not user:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
-        return user
+
+        if not isinstance(user, dict):
+            return user.__dict__
+        else:
+            return user
 
     return await get_user(user_id)
 

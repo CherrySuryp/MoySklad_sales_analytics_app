@@ -10,7 +10,7 @@ sys.path.insert(0, dirname(dirname(dirname(abspath(__file__)))))
 from app.config import DATABASE_URL
 from app.database import Base  # noqa
 from app.users.models import Users # noqa
-from app.MoySklad.sales.models import Orders, OrderDetails # noqa
+from app.MoySklad.orders.models import Orders, OrderDetails # noqa
 from app.MoySklad.items.models import Items # noqa
 
 # this is the Alembic Config object, which provides

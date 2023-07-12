@@ -11,4 +11,4 @@ class Items(Base):
     item_code = Column(String, nullable=False)
     item_external_code = Column(String, nullable=False)
     item_name = Column(String, nullable=False)
-    ms_id = Column(String, nullable=False)
+    ms_id = Column(String, unique=True, nullable=False)
