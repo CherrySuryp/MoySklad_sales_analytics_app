@@ -1,7 +1,6 @@
 from sqlalchemy import Column, Integer, Date, String, ForeignKey
 
 from app.database import Base
-from app.users.models import Users
 
 
 class Orders(Base):
