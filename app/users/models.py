@@ -15,3 +15,4 @@ class Users(Base):
     telegram_id = Column(Integer)
     verified = Column(Boolean, default=False, nullable=False)
     items_limit = Column(Integer, default=1000, nullable=False)
+    max_time_range = Column(Integer, default=12)
