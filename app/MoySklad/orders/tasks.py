@@ -2,6 +2,7 @@ import asyncio
 import requests
 
 from app.MoySklad.orders.dao import OrdersDAO, OrderDetailsDAO
+from app.MoySklad.items.dao import ItemsDAO
 from app.tasks.celery_app import celery
 from datetime import datetime, timedelta
 
@@ -90,13 +91,16 @@ def get_order_details(content: list, ms_token: str):
                         "Authorization": f"Bearer {ms_token}"
                     },
                 )
+            print(request.status_code)
             request = request.json()['rows']
 
             for a in range(len(request)):
+                product_ms_id = request[a]['assortment']['meta']['href']
+                product_ms_id = product_ms_id.split('/')[-1]
                 # try:
                 order_details = {
                     "order_ms_id": order_ms_id,
-                    'product_ms_id': request[a]['id'],
+                    'product_ms_id': product_ms_id,
                     'quantity': request[a]['quantity'],
                     'sum': request[a]['price'],
                 }
@@ -106,7 +110,9 @@ def get_order_details(content: list, ms_token: str):
                     product_ms_id=order_details['product_ms_id']
                 )
 
-                if order_details_exists:
+                item_exists = await ItemsDAO.find_one_or_none(ms_id=product_ms_id)
+
+                if order_details_exists or not item_exists:
                     pass
                 else:
                     data.append(order_details)
