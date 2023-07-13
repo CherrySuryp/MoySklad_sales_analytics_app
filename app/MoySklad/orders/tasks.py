@@ -1,7 +1,7 @@
 import asyncio
 import requests
 
-from app.MoySklad.orders.dao import OrdersDAO
+from app.MoySklad.orders.dao import OrdersDAO, OrderDetailsDAO
 from app.tasks.celery_app import celery
 from datetime import datetime, timedelta
 
@@ -21,7 +21,6 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
 
         while True:
             with requests.session() as session:
-
                 request = session.get(
                     f"https://online.moysklad.ru/api/remap/1.2/entity/demand"
                     f"?filter=moment>={date}",
@@ -35,7 +34,7 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
                 )
             request = request.json()['rows']
 
-            if len(request) > 0:
+            if request:
                 for i in range(len(request)):
                     try:
                         order_date = request[i]['moment'].split(' ')[0]
@@ -57,7 +56,7 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
                         print(f'Failed to add order')
                         pass
 
-                if len(content) > 0:
+                if content:
                     offset += 1000
                     await OrdersDAO.add_orders(content)
                     print(f"Added {len(content)} order(s)")
@@ -73,5 +72,53 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
 
 
 @celery.task
-def get_order_details(content):
-    print(len(content))
+def get_order_details(content: list, ms_token: str):
+    if not content:
+        return
+
+    data = []
+
+    async def async_get_order_details():
+        for i in range(len(content)):
+            order_ms_id = content[i]['ms_id']
+
+            with requests.session() as session:
+                request = session.get(
+                    f"https://online.moysklad.ru/api/remap/1.2/entity/demand/"
+                    f"{order_ms_id}/positions",
+                    headers={
+                        "Authorization": f"Bearer {ms_token}"
+                    },
+                )
+            request = request.json()['rows']
+
+            for a in range(len(request)):
+                # try:
+                order_details = {
+                    "order_ms_id": order_ms_id,
+                    'product_ms_id': request[a]['id'],
+                    'quantity': request[a]['quantity'],
+                    'sum': request[a]['price'],
+                }
+
+                order_details_exists = await OrderDetailsDAO.find_one_or_none(
+                    order_ms_id=order_ms_id,
+                    product_ms_id=order_details['product_ms_id']
+                )
+
+                if order_details_exists:
+                    pass
+                else:
+                    data.append(order_details)
+
+            # except IndentationError:
+            #     print(f'Failed to add order_details')
+            #     pass
+
+        if data:
+            await OrderDetailsDAO.add_order_details(data)
+            print(f"Added {len(data)} order details")
+        else:
+            print('No order details to add')
+
+    asyncio.get_event_loop().run_until_complete(async_get_order_details())
