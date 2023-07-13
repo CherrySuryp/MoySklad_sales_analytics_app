@@ -6,8 +6,10 @@ from app.tasks.celery_app import celery
 from datetime import datetime, timedelta
 
 
-@celery.task()
+@celery.task
 def get_orders(user_id: int, max_time_range: int, ms_token: str):
+    content = []
+
     async def async_get_orders():
         print(f'User time range: {max_time_range}')
 
@@ -32,7 +34,6 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
                     }
                 )
             request = request.json()['rows']
-            content = []
 
             if len(request) > 0:
                 for i in range(len(request)):
@@ -68,3 +69,9 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
                 break
 
     asyncio.get_event_loop().run_until_complete(async_get_orders())
+    return content
+
+
+@celery.task
+def get_order_details(content):
+    print(len(content))
