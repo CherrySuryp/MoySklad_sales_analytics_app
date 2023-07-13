@@ -31,7 +31,6 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
                         'limit': 1000
                     }
                 )
-            print(request.status_code)
             request = request.json()['rows']
             content = []
 
@@ -46,7 +45,12 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
                             'order_name': request[i]['name'],
                             'order_date': order_date,
                         }
-                        content.append(order_data)
+
+                        order_exists = await OrdersDAO.find_one_or_none(ms_id=request[i]['id'])
+                        if order_exists:
+                            pass
+                        else:
+                            content.append(order_data)
 
                     except KeyError:
                         print(f'Failed to add order')
