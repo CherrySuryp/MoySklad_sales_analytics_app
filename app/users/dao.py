@@ -40,6 +40,8 @@ class UsersDAO(BaseDAO):
                 Users.ms_token,
                 Users.telegram_id,
                 Users.verified,
+                Users.items_limit,
+                Users.max_time_range
             )
             result = await session.execute(query)
             return result.mappings().all()
