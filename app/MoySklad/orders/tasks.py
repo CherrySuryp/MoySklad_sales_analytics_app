@@ -13,15 +13,15 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
 
     async def async_get_orders():
         print(f'User time range: {max_time_range}')
-
-        offset = 0
         date = datetime.strftime(
             datetime.utcnow() - timedelta(days=max_time_range),
             '%Y-%m-%d'
         )
+        with requests.session() as session:
+            offset = 0
 
-        while True:
-            with requests.session() as session:
+            while True:
+                data = []
                 request = session.get(
                     f"https://online.moysklad.ru/api/remap/1.2/entity/demand"
                     f"?filter=moment>={date}",
@@ -29,46 +29,47 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
                         "Authorization": f"Bearer {ms_token}"
                     },
                     params={
-                        'offset': offset,
-                        'limit': 1000
+                        'offset': offset
                     }
                 )
-            request = request.json()['rows']
+                request = request.json()['rows']
 
-            if request:
-                for i in range(len(request)):
-                    try:
-                        order_date = request[i]['moment'].split(' ')[0]
-                        order_date = datetime.strptime(order_date, '%Y-%m-%d')
-                        order_data = {
-                            'ms_id': request[i]['id'],
-                            'user_id': user_id,
-                            'order_name': request[i]['name'],
-                            'order_date': order_date,
-                        }
+                if request:
+                    for i in range(len(request)):
+                        try:
+                            order_date = request[i]['moment'].split(' ')[0]
+                            order_date = datetime.strptime(order_date, '%Y-%m-%d')
+                            order_data = {
+                                'ms_id': request[i]['id'],
+                                'user_id': user_id,
+                                'order_name': request[i]['name'],
+                                'order_date': order_date,
+                            }
 
-                        order_exists = await OrdersDAO.find_one_or_none(ms_id=request[i]['id'])
-                        if order_exists:
+                            order_exists = await OrdersDAO.find_one_or_none(ms_id=request[i]['id'])
+
+                            if not order_exists:
+                                data.append(order_data)
+                                content.append(order_data)
+                            else:
+                                pass
+
+                        except KeyError:
+                            print(f'Failed to add order')
                             pass
-                        else:
-                            content.append(order_data)
+                    if data:
+                        offset += 1000
+                        await OrdersDAO.add_orders(data)
+                        print(f"Added {len(data)} order(s)")
+                    else:
+                        offset += 1000
+                        print('No orders to add')
 
-                    except KeyError:
-                        print(f'Failed to add order')
-                        pass
-
-                if content:
-                    offset += 1000
-                    await OrdersDAO.add_orders(content)
-                    print(f"Added {len(content)} order(s)")
                 else:
-                    offset += 1000
-                    print('No orders to add')
-
-            else:
-                break
+                    break
 
     asyncio.get_event_loop().run_until_complete(async_get_orders())
+    print(f'Total returned content: {len(content)}')
     return content
 
 
@@ -80,10 +81,10 @@ def get_order_details(content: list, ms_token: str):
     data = []
 
     async def async_get_order_details():
-        for i in range(len(content)):
-            order_ms_id = content[i]['ms_id']
-
-            with requests.session() as session:
+        count = 0
+        with requests.session() as session:
+            for i in range(len(content)):
+                order_ms_id = content[i]['ms_id']
                 request = session.get(
                     f"https://online.moysklad.ru/api/remap/1.2/entity/demand/"
                     f"{order_ms_id}/positions",
@@ -91,31 +92,33 @@ def get_order_details(content: list, ms_token: str):
                         "Authorization": f"Bearer {ms_token}"
                     },
                 )
-            print(request.status_code)
-            request = request.json()['rows']
+                request = request.json()['rows']
 
-            for a in range(len(request)):
-                product_ms_id = request[a]['assortment']['meta']['href']
-                product_ms_id = product_ms_id.split('/')[-1]
-                # try:
-                order_details = {
-                    "order_ms_id": order_ms_id,
-                    'product_ms_id': product_ms_id,
-                    'quantity': request[a]['quantity'],
-                    'sum': request[a]['price'],
-                }
+                count += 1
+                print(f"Request No: {count}")
 
-                order_details_exists = await OrderDetailsDAO.find_one_or_none(
-                    order_ms_id=order_ms_id,
-                    product_ms_id=order_details['product_ms_id']
-                )
+                for a in range(len(request)):
+                    product_ms_id = request[a]['assortment']['meta']['href']
+                    product_ms_id = product_ms_id.split('/')[-1]
+                    # try:
+                    order_details = {
+                        "order_ms_id": order_ms_id,
+                        'product_ms_id': product_ms_id,
+                        'quantity': request[a]['quantity'],
+                        'sum': request[a]['price'],
+                    }
 
-                item_exists = await ItemsDAO.find_one_or_none(ms_id=product_ms_id)
+                    order_details_exists = await OrderDetailsDAO.find_one_or_none(
+                        order_ms_id=order_ms_id,
+                        product_ms_id=order_details['product_ms_id']
+                    )
 
-                if order_details_exists or not item_exists:
-                    pass
-                else:
-                    data.append(order_details)
+                    item_exists = await ItemsDAO.find_one_or_none(ms_id=product_ms_id)
+
+                    if order_details_exists or not item_exists:
+                        pass
+                    else:
+                        data.append(order_details)
 
             # except IndentationError:
             #     print(f'Failed to add order_details')

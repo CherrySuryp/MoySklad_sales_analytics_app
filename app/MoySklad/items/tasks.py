@@ -19,10 +19,9 @@ def get_items(user_id: int, ms_token: str, user_limit: int):
             items_limit = user_limit
 
         offset = 0
-
-        while offset < user_limit:
-            # Getting items from MoySklad API
-            with requests.session() as session:
+        with requests.session() as session:
+            while offset < user_limit:
+                # Getting items from MoySklad API
                 request = session.get(
                     "https://online.moysklad.ru/api/remap/1.2/entity/assortment",
                     headers={
@@ -34,40 +33,40 @@ def get_items(user_id: int, ms_token: str, user_limit: int):
                     }
                 ).json()['rows']
 
-            request = request
-            content = []
+                request = request
+                content = []
 
-            print(f'Received {len(request)} item(s)')
-            if len(request) > 0:
-                for i in range(len(request)):
-                    try:
-                        item_data = {
-                            'user_id': user_id,
-                            'ms_id': request[i]['id'],
-                            'item_code': request[i]['code'],
-                            'item_external_code': request[i]['externalCode'],
-                            'item_name': request[i]['name'],
-                        }
-                        item_exists = await ItemsDAO.find_one_or_none(
-                            ms_id=item_data['ms_id'],
-                            user_id=user_id
-                        )
-                        if not item_exists:
-                            content.append(item_data)
-                        else:
+                print(f'Received {len(request)} item(s)')
+                if len(request) > 0:
+                    for i in range(len(request)):
+                        try:
+                            item_data = {
+                                'user_id': user_id,
+                                'ms_id': request[i]['id'],
+                                'item_code': request[i]['code'],
+                                'item_external_code': request[i]['externalCode'],
+                                'item_name': request[i]['name'],
+                            }
+                            item_exists = await ItemsDAO.find_one_or_none(
+                                ms_id=item_data['ms_id'],
+                                user_id=user_id
+                            )
+                            if not item_exists:
+                                content.append(item_data)
+                            else:
+                                pass
+                        except KeyError:
+                            print(f"Item : {request[i]['name']} excluded from list due error")
                             pass
-                    except KeyError:
-                        print(f"Item : {request[i]['name']} excluded from list due error")
-                        pass
 
-                if len(content) > 0:
-                    offset += 1000
-                    await ItemsDAO.add_items(content)
-                    print(f"Added {len(content)} item(s)")
+                    if len(content) > 0:
+                        offset += 1000
+                        await ItemsDAO.add_items(content)
+                        print(f"Added {len(content)} item(s)")
+                    else:
+                        offset += 1000
+                        print('No items to add')
                 else:
-                    offset += 1000
-                    print('No items to add')
-            else:
-                break
+                    break
 
     asyncio.get_event_loop().run_until_complete(async_get_items())
