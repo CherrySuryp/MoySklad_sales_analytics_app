@@ -1,15 +1,20 @@
 from fastapi import APIRouter, status, Depends
+
+from app.MoySklad.dependencies import check_ms_token
 from app.users.schemas import SUser
 from app.users.dependencies import get_current_user
 from app.MoySklad.orders.tasks import get_orders, get_order_details
 from celery import chain
 router = APIRouter(
     prefix='/MoySklad/orders',
-    tags=['Moy Sklad']
+    tags=['Moy Sklad'],
 )
 
 
-@router.post('', status_code=status.HTTP_202_ACCEPTED)
+@router.post(
+    '',
+    status_code=status.HTTP_202_ACCEPTED,
+)
 async def add_orders_and_order_details(user_data: SUser = Depends(get_current_user)):
 
     user_id = user_data['id']
