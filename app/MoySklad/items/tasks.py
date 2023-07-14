@@ -67,6 +67,7 @@ def get_items(user_id: int, ms_token: str, user_limit: int):
                         offset += 1000
                         print('No items to add')
                 else:
+                    session.close()
                     break
 
     asyncio.get_event_loop().run_until_complete(async_get_items())
