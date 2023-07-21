@@ -9,9 +9,10 @@ sys.path.insert(0, dirname(dirname(dirname(abspath(__file__)))))
 
 from app.config import DATABASE_URL
 from app.database import Base  # noqa
-from app.users.models import Users # noqa
-from app.MoySklad.orders.models import Orders, OrderDetails # noqa
-from app.MoySklad.items.models import Items # noqa
+from app.users.models import Users  # noqa
+from app.MoySklad.orders.models import Orders, OrderDetails  # noqa
+from app.MoySklad.items.models import Items  # noqa
+from app.MoySklad.counterparties.models import Counterparties  # noqa
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -29,6 +30,7 @@ if config.config_file_name is not None:
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
 target_metadata = Base.metadata
+
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:

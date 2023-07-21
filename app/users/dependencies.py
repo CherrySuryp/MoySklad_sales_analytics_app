@@ -27,15 +27,13 @@ async def get_current_user(token: str = Depends(get_token)):
 
     @cache(expire=5, coder=JsonCoder)
     async def get_user(uid: int):
-        await asyncio.sleep(2)
         user = await UsersDAO.find_one_or_none(id=int(uid))
         if not user:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
 
         if not isinstance(user, dict):
             return user.__dict__
-        else:
-            return user
+        return user
 
     return await get_user(user_id)
 
