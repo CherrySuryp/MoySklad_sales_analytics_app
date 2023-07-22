@@ -33,17 +33,21 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
                     }
                 )
                 request = request.json()['rows']
+                print(f'Received {len(request)} orders')
 
                 if request:
                     for i in range(len(request)):
                         try:
                             order_date = request[i]['moment'].split(' ')[0]
                             order_date = datetime.strptime(order_date, '%Y-%m-%d')
+                            counterparty = request[i]['agent']['meta']['href'].split('/')[-1]
+
                             order_data = {
                                 'ms_id': request[i]['id'],
                                 'user_id': user_id,
                                 'order_name': request[i]['name'],
                                 'order_date': order_date,
+                                'counterparty': counterparty
                             }
 
                             order_exists = await OrdersDAO.find_one_or_none(ms_id=request[i]['id'])

@@ -10,6 +10,3 @@ class Counterparties(Base):
     ms_id = Column(String, unique=True, nullable=False)
     name = Column(String, nullable=False)
     inn = Column(String, nullable=True)
-    kpp = Column(String, nullable=True)
-    ogrn = Column(String, nullable=True)
-    okpo = Column(String, nullable=True)

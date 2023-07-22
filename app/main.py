@@ -7,6 +7,7 @@ from app.MoySklad.router import router as ms_router
 from app.MoySklad.items.router import router as ms_items_router
 from app.MoySklad.orders.router import router as ms_orders_router
 from app.MoySklad.counterparties.router import router as ms_counterparties_router
+from app.MoySklad.purchases.router import router as purchases_router
 
 from redis import asyncio as aioredis
 from app.config import settings
@@ -18,6 +19,7 @@ app.include_router(ms_router)
 app.include_router(ms_items_router)
 app.include_router(ms_orders_router)
 app.include_router(ms_counterparties_router)
+app.include_router(purchases_router)
 
 
 @app.on_event("startup")
