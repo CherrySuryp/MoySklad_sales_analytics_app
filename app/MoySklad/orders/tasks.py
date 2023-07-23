@@ -1,6 +1,7 @@
 import asyncio
 import requests
 
+from app.MoySklad.counterparties.dao import CounterpartiesDAO
 from app.MoySklad.orders.dao import OrdersDAO, OrderDetailsDAO
 from app.MoySklad.items.dao import ItemsDAO
 from app.tasks.celery_app import celery
@@ -51,8 +52,9 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
                             }
 
                             order_exists = await OrdersDAO.find_one_or_none(ms_id=request[i]['id'])
+                            counterparty_exists = await CounterpartiesDAO.find_one_or_none(ms_id=counterparty)
 
-                            if not order_exists:
+                            if not order_exists and counterparty_exists:
                                 data.append(order_data)
                                 content.append(order_data)
                             else:
