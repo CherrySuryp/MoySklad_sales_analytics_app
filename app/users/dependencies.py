@@ -1,5 +1,6 @@
 import asyncio
 
+import requests
 from fastapi_cache import JsonCoder
 from jose import jwt, JWTError
 from app.config import settings
@@ -8,7 +9,7 @@ from fastapi import Request, HTTPException, status, Depends
 from fastapi_cache.decorator import cache
 
 
-def get_token(request: Request):
+async def get_token(request: Request):
     token = request.cookies.get("MS_Analytics")
     if not token:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
@@ -36,4 +37,3 @@ async def get_current_user(token: str = Depends(get_token)):
         return user
 
     return await get_user(user_id)
-

@@ -1,7 +1,7 @@
 import asyncio
 import requests
 
-from app.MoySklad.counterparties.dao import CounterpartiesDAO
+from app.MoySklad.entities.counterparties.dao import CounterpartiesDAO
 from app.tasks.celery_app import celery
 
 

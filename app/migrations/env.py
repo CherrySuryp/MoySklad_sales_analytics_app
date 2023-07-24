@@ -12,8 +12,8 @@ from app.config import DATABASE_URL
 from app.database import Base  # noqa
 from app.users.models import Users  # noqa
 from app.MoySklad.orders.models import Orders, OrderDetails  # noqa
-from app.MoySklad.items.models import Items  # noqa
-from app.MoySklad.counterparties.models import Counterparties  # noqa
+from app.MoySklad.entities.items.models import Items  # noqa
+from app.MoySklad.entities.counterparties.models import Counterparties  # noqa
 from app.MoySklad.purchases.models import Purchases # noqa
 from app.MoySklad.purchases.models import PurchaseDetails # noqa
 

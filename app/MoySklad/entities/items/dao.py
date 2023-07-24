@@ -1,5 +1,5 @@
 from app.dao.base import BaseDAO
-from app.MoySklad.items.models import Items
+from app.MoySklad.entities.items.models import Items
 from sqlalchemy import insert
 
 from app.database import async_session_maker

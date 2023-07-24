@@ -1,7 +1,7 @@
 from sqlalchemy import insert
 
 from app.dao.base import BaseDAO
-from app.MoySklad.counterparties.models import Counterparties
+from app.MoySklad.entities.counterparties.models import Counterparties
 from app.database import async_session_maker
 
 

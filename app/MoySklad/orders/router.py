@@ -1,6 +1,6 @@
 from fastapi import APIRouter, status, Depends
 
-from app.MoySklad.dependencies import check_ms_token
+from app.MoySklad.dependecies import check_ms_token_validity
 from app.users.schemas import SUser
 from app.users.dependencies import get_current_user
 from app.MoySklad.orders.tasks import get_orders, get_order_details
@@ -8,6 +8,7 @@ from celery import chain
 router = APIRouter(
     prefix='/MoySklad/orders',
     tags=['Moy Sklad'],
+    dependencies=[Depends(check_ms_token_validity)]
 )
 
 

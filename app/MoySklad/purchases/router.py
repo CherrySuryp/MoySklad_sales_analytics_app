@@ -1,12 +1,14 @@
 from fastapi import APIRouter, Depends
 from celery import chain
 
+from app.MoySklad.dependecies import check_ms_token_validity
 from app.MoySklad.purchases.tasks import get_purchases, get_purchase_details
 from app.users.dependencies import get_current_user
 
 router = APIRouter(
     tags=['Moy Sklad'],
-    prefix='/MoySklad/purchases'
+    prefix='/MoySklad/purchases',
+    dependencies=[Depends(check_ms_token_validity)]
 )
 
 

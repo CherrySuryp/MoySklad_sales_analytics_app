@@ -1,9 +1,9 @@
 import asyncio
 import requests
 
-from app.MoySklad.counterparties.dao import CounterpartiesDAO
+from app.MoySklad.entities.counterparties.dao import CounterpartiesDAO
 from app.MoySklad.orders.dao import OrdersDAO, OrderDetailsDAO
-from app.MoySklad.items.dao import ItemsDAO
+from app.MoySklad.entities.items.dao import ItemsDAO
 from app.tasks.celery_app import celery
 from datetime import datetime, timedelta
 
