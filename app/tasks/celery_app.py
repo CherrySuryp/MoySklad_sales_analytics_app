@@ -9,5 +9,7 @@ celery = Celery(
         "app.MoySklad.tasks",
         "app.MoySklad.items.tasks",
         "app.MoySklad.orders.tasks",
+        "app.MoySklad.counterparties.tasks",
+        "app.MoySklad.purchases.tasks",
     ],
 )

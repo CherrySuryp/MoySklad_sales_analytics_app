@@ -8,9 +8,9 @@ class BaseDAO:
     model = None
 
     @classmethod
-    async def add(cls, **kwargs):
+    async def add(cls, *args):
         async with async_session_maker() as session:
-            query = insert(cls.model).values(**kwargs)
+            query = insert(cls.model).values(*args)
             await session.execute(query)
             await session.commit()
 

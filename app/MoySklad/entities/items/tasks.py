@@ -1,7 +1,7 @@
 import asyncio
 
 import requests
-from app.MoySklad.items.dao import ItemsDAO
+from app.MoySklad.entities.items.dao import ItemsDAO
 from app.tasks.celery_app import celery
 
 

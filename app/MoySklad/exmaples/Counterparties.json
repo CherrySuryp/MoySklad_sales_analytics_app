@@ -1,0 +1,1903 @@
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty",
+    "type": "counterparty",
+    "mediaType": "application/json",
+    "size": 22,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/0c368fa4-a634-11ed-0a80-06830043b644",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=0c368fa4-a634-11ed-0a80-06830043b644"
+      },
+      "id": "0c368fa4-a634-11ed-0a80-06830043b644",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-02-07 12:04:19.076",
+      "name": "Амарян Артак Генадик",
+      "externalCode": "T13NAMeZiYLFr4OC43Ypc3",
+      "archived": false,
+      "created": "2023-02-06 18:36:39.358",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/0c368fa4-a634-11ed-0a80-06830043b644/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [
+        "drop"
+      ],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/0c368fa4-a634-11ed-0a80-06830043b644/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/0c368fa4-a634-11ed-0a80-06830043b644/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 103767100,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/0c368fa4-a634-11ed-0a80-06830043b644/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12e4dc3f-1105-11ee-0a80-060c0014b10d",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=12e4dc3f-1105-11ee-0a80-060c0014b10d"
+      },
+      "id": "12e4dc3f-1105-11ee-0a80-060c0014b10d",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-06-22 16:59:58.469",
+      "name": "АВИТО",
+      "externalCode": "5KT68bSKg9j4E99sxyOwf3",
+      "archived": false,
+      "created": "2023-06-22 16:59:58.469",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12e4dc3f-1105-11ee-0a80-060c0014b10d/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12e4dc3f-1105-11ee-0a80-060c0014b10d/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12e4dc3f-1105-11ee-0a80-060c0014b10d/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 4030000.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12e4dc3f-1105-11ee-0a80-060c0014b10d/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/159cd72d-77a2-11ed-0a80-03d5000b312a",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=159cd72d-77a2-11ed-0a80-03d5000b312a"
+      },
+      "id": "159cd72d-77a2-11ed-0a80-03d5000b312a",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/1d70adf5-7654-11ed-0a80-03ca0031f191",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=1d70adf5-7654-11ed-0a80-03ca0031f191"
+        }
+      },
+      "shared": true,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-03-19 14:01:10.246",
+      "name": "ООО \"ЯНДЕКС\"",
+      "externalCode": "JIuvWP3dgDuXupMVDz7eE2",
+      "archived": false,
+      "created": "2022-12-09 12:15:54.948",
+      "companyType": "legal",
+      "legalTitle": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ЯНДЕКС\"",
+      "legalAddress": "119021, Россия, г Москва, ул Льва Толстого, 16",
+      "legalAddressFull": {
+        "postalCode": "119021",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=9df7c2c3-7782-4c5c-a8ed-1102af611608"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "г Москва",
+        "street": "ул Льва Толстого",
+        "house": "16"
+      },
+      "inn": "7736207543",
+      "kpp": "770401001",
+      "ogrn": "1027700229193",
+      "okpo": "55187675",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/159cd72d-77a2-11ed-0a80-03d5000b312a/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [
+        "маркетплейс"
+      ],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/159cd72d-77a2-11ed-0a80-03d5000b312a/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/159cd72d-77a2-11ed-0a80-03d5000b312a/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 3193247942,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/159cd72d-77a2-11ed-0a80-03d5000b312a/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/28b9ea53-1669-11ee-0a80-01c5000daa76",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=28b9ea53-1669-11ee-0a80-01c5000daa76"
+      },
+      "id": "28b9ea53-1669-11ee-0a80-01c5000daa76",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/47bb715b-03b8-11ee-0a80-0509003c6ead",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=47bb715b-03b8-11ee-0a80-0509003c6ead"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-06-29 13:39:00.570",
+      "name": "Xiaomi Вавилово",
+      "externalCode": "VzvjefrFg9ztcrAjugPng2",
+      "archived": false,
+      "created": "2023-06-29 13:39:00.570",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/28b9ea53-1669-11ee-0a80-01c5000daa76/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/28b9ea53-1669-11ee-0a80-01c5000daa76/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/28b9ea53-1669-11ee-0a80-01c5000daa76/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 0.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/28b9ea53-1669-11ee-0a80-01c5000daa76/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/29c91d8d-ce1d-11ed-0a80-0bd4002233d4",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=29c91d8d-ce1d-11ed-0a80-0bd4002233d4"
+      },
+      "id": "29c91d8d-ce1d-11ed-0a80-0bd4002233d4",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-03-29 13:38:35.156",
+      "name": "ООО \"ЛАНДИС\" Треолан",
+      "externalCode": "6OjOj3fNj13RZv-bWyvoa0",
+      "archived": false,
+      "created": "2023-03-29 13:33:36.911",
+      "companyType": "legal",
+      "legalTitle": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ЛАНДИС\"",
+      "legalAddress": "105066, Россия, г Москва, ул Доброслободская, 5, 9",
+      "legalAddressFull": {
+        "postalCode": "105066",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=9df7c2c3-7782-4c5c-a8ed-1102af611608"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "г Москва",
+        "street": "ул Доброслободская",
+        "house": "5",
+        "apartment": "9"
+      },
+      "inn": "5007067042",
+      "kpp": "770101001",
+      "ogrn": "1085007003674",
+      "okpo": "86686975",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/29c91d8d-ce1d-11ed-0a80-0bd4002233d4/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [
+        "дистрибьютеры"
+      ],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/29c91d8d-ce1d-11ed-0a80-0bd4002233d4/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/29c91d8d-ce1d-11ed-0a80-0bd4002233d4/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 0.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/29c91d8d-ce1d-11ed-0a80-0bd4002233d4/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/2ddfeeea-06c5-11ee-0a80-03600022bd22",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=2ddfeeea-06c5-11ee-0a80-03600022bd22"
+      },
+      "id": "2ddfeeea-06c5-11ee-0a80-03600022bd22",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-06-09 15:57:24.324",
+      "name": "Xiaomi Южные Ворота",
+      "externalCode": "2NmFUDT2g79l0cXosNH3J2",
+      "archived": false,
+      "created": "2023-06-09 15:57:24.324",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/2ddfeeea-06c5-11ee-0a80-03600022bd22/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/2ddfeeea-06c5-11ee-0a80-03600022bd22/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/2ddfeeea-06c5-11ee-0a80-03600022bd22/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 0.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/2ddfeeea-06c5-11ee-0a80-03600022bd22/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/531f44da-8b7c-11ed-0a80-0ffb00c87d89",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=531f44da-8b7c-11ed-0a80-0ffb00c87d89"
+      },
+      "id": "531f44da-8b7c-11ed-0a80-0ffb00c87d89",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-03-19 14:01:20.865",
+      "name": "ООО «Интернет решения»",
+      "externalCode": "d5TKteQUjidngGSL3ErL63",
+      "archived": false,
+      "created": "2023-01-03 18:36:15.623",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/531f44da-8b7c-11ed-0a80-0ffb00c87d89/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [
+        "маркетплейс"
+      ],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/531f44da-8b7c-11ed-0a80-0ffb00c87d89/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/531f44da-8b7c-11ed-0a80-0ffb00c87d89/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 1140000.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/531f44da-8b7c-11ed-0a80-0ffb00c87d89/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/72090437-b691-11ed-0a80-05d4005cdf4e",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=72090437-b691-11ed-0a80-05d4005cdf4e"
+      },
+      "id": "72090437-b691-11ed-0a80-05d4005cdf4e",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-03-19 14:00:59.319",
+      "name": "ООО \"О-Си-Эс-Центр\"",
+      "externalCode": "5TDdFRXQgVoiMpH0F3pJb2",
+      "archived": false,
+      "created": "2023-02-27 14:25:32.084",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/72090437-b691-11ed-0a80-05d4005cdf4e/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [
+        "дистрибьютеры"
+      ],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/72090437-b691-11ed-0a80-05d4005cdf4e/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/72090437-b691-11ed-0a80-05d4005cdf4e/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 4083500.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/72090437-b691-11ed-0a80-05d4005cdf4e/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/811e37c6-0f79-11ee-0a80-072200165a29",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=811e37c6-0f79-11ee-0a80-072200165a29"
+      },
+      "id": "811e37c6-0f79-11ee-0a80-072200165a29",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-06-20 17:48:22.662",
+      "name": "ООО Вайлдберриз",
+      "externalCode": "KhgHZl8ujK1wzIbCFLgCa0",
+      "archived": false,
+      "created": "2023-06-20 17:48:22.662",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/811e37c6-0f79-11ee-0a80-072200165a29/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/811e37c6-0f79-11ee-0a80-072200165a29/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/811e37c6-0f79-11ee-0a80-072200165a29/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 21188800,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/811e37c6-0f79-11ee-0a80-072200165a29/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/82abd971-c648-11ed-0a80-0d97002288fe",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=82abd971-c648-11ed-0a80-0d97002288fe"
+      },
+      "id": "82abd971-c648-11ed-0a80-0d97002288fe",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-04-27 11:17:25.126",
+      "name": "Сергей Горбушка",
+      "externalCode": "ghyrbYpygsbqHlpjf2X5z1",
+      "archived": false,
+      "created": "2023-03-19 14:23:45.199",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/82abd971-c648-11ed-0a80-0d97002288fe/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [
+        "горбушка"
+      ],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/82abd971-c648-11ed-0a80-0d97002288fe/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/82abd971-c648-11ed-0a80-0d97002288fe/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 0.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/82abd971-c648-11ed-0a80-0d97002288fe/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/87be6e72-9330-11ed-0a80-08e1000dd898",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=87be6e72-9330-11ed-0a80-08e1000dd898"
+      },
+      "id": "87be6e72-9330-11ed-0a80-08e1000dd898",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-04-07 10:07:42.188",
+      "name": "ООО \"МАРКЕТПЛЕЙС\"",
+      "externalCode": "NGWQZqMmhdfvdONN1YwNB1",
+      "archived": false,
+      "created": "2023-01-13 13:53:36.335",
+      "companyType": "legal",
+      "legalTitle": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"МАРКЕТПЛЕЙС\"",
+      "legalAddress": "105082, Россия, г Москва, Спартаковская пл, 16/15 стр 6",
+      "legalAddressFull": {
+        "postalCode": "105082",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=9df7c2c3-7782-4c5c-a8ed-1102af611608"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "г Москва",
+        "street": "Спартаковская пл",
+        "house": "16/15 стр 6"
+      },
+      "inn": "9701048328",
+      "kpp": "770101001",
+      "ogrn": "1167746803180",
+      "okpo": "04266663",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/87be6e72-9330-11ed-0a80-08e1000dd898/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 1,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [
+        "маркетплейс"
+      ],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/87be6e72-9330-11ed-0a80-08e1000dd898/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/87be6e72-9330-11ed-0a80-08e1000dd898/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 3275237787,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/87be6e72-9330-11ed-0a80-08e1000dd898/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/8865bc36-ef44-11ed-0a80-034d00c3a083",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=8865bc36-ef44-11ed-0a80-034d00c3a083"
+      },
+      "id": "8865bc36-ef44-11ed-0a80-034d00c3a083",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-05-10 18:08:34.651",
+      "name": "ООО \"ГКС\"",
+      "externalCode": "RmFo3TOdgKxaohOFQg-zW3",
+      "archived": false,
+      "created": "2023-05-10 18:08:34.651",
+      "companyType": "legal",
+      "legalTitle": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ГИГАНТ-КОМПЬЮТЕРНЫЕ СИСТЕМЫ\"",
+      "legalAddress": "111024, Россия, г Москва, ул 2-я Энтузиастов, 3, VI ком 9",
+      "legalAddressFull": {
+        "postalCode": "111024",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=9df7c2c3-7782-4c5c-a8ed-1102af611608"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "г Москва",
+        "street": "ул 2-я Энтузиастов",
+        "house": "3",
+        "apartment": "VI ком 9"
+      },
+      "inn": "7720768984",
+      "kpp": "772001001",
+      "ogrn": "1127747243260",
+      "okpo": "16672664",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/8865bc36-ef44-11ed-0a80-034d00c3a083/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [
+        "дистрибьютеры"
+      ],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/8865bc36-ef44-11ed-0a80-034d00c3a083/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/8865bc36-ef44-11ed-0a80-034d00c3a083/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 0.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/8865bc36-ef44-11ed-0a80-034d00c3a083/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/8bf5a49a-b05a-11ed-0a80-0bc6002ad84c",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=8bf5a49a-b05a-11ed-0a80-0bc6002ad84c"
+      },
+      "id": "8bf5a49a-b05a-11ed-0a80-0bc6002ad84c",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-03-19 14:00:47.996",
+      "name": "ООО \"ДИХАУС\"",
+      "externalCode": "M1669IGwgFT5jINNB2K2W2",
+      "archived": false,
+      "created": "2023-02-19 16:37:26.111",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/8bf5a49a-b05a-11ed-0a80-0bc6002ad84c/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [
+        "дистрибьютеры"
+      ],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/8bf5a49a-b05a-11ed-0a80-0bc6002ad84c/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/8bf5a49a-b05a-11ed-0a80-0bc6002ad84c/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 0.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/8bf5a49a-b05a-11ed-0a80-0bc6002ad84c/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/a97da773-a7c0-11ed-0a80-00e4001642dc",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=a97da773-a7c0-11ed-0a80-00e4001642dc"
+      },
+      "id": "a97da773-a7c0-11ed-0a80-00e4001642dc",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-03-19 14:00:25.815",
+      "name": "Олег Дубай",
+      "externalCode": "zz04-NuNjBwGjZwRh9cy81",
+      "archived": false,
+      "created": "2023-02-08 17:55:43.783",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/a97da773-a7c0-11ed-0a80-00e4001642dc/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [
+        "горбушка",
+        "дубай"
+      ],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/a97da773-a7c0-11ed-0a80-00e4001642dc/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/a97da773-a7c0-11ed-0a80-00e4001642dc/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 0.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/a97da773-a7c0-11ed-0a80-00e4001642dc/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/a9fe90f4-b751-11ed-0a80-0d16000eb845",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=a9fe90f4-b751-11ed-0a80-0d16000eb845"
+      },
+      "id": "a9fe90f4-b751-11ed-0a80-0d16000eb845",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-03-19 14:00:31.675",
+      "name": "Денис Дубай",
+      "externalCode": "wgTgEgs5jzBMovsLXSKMj2",
+      "archived": false,
+      "created": "2023-02-28 13:21:29.089",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/a9fe90f4-b751-11ed-0a80-0d16000eb845/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [
+        "горбушка",
+        "дубай"
+      ],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/a9fe90f4-b751-11ed-0a80-0d16000eb845/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/a9fe90f4-b751-11ed-0a80-0d16000eb845/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 0.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/a9fe90f4-b751-11ed-0a80-0d16000eb845/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b8284cf8-c40f-11ed-0a80-0759002a5c75",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=b8284cf8-c40f-11ed-0a80-0759002a5c75"
+      },
+      "id": "b8284cf8-c40f-11ed-0a80-0759002a5c75",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-05-25 11:08:26.523",
+      "name": "ООО \"МКТ\"",
+      "externalCode": "C8H0JgoZg6sQvn5USqddM3",
+      "archived": false,
+      "created": "2023-03-16 18:32:11.142",
+      "companyType": "legal",
+      "legalTitle": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"МАРВЕЛ КТ\"",
+      "legalAddress": "107061, Г.Москва, ПЛ. ПРЕОБРАЖЕНСКАЯ, Д. 8, ЭТАЖ 27 - ПОМ. LXXXVI",
+      "legalAddressFull": {
+        "addInfo": "107061, Г.Москва, ПЛ. ПРЕОБРАЖЕНСКАЯ, Д. 8, ЭТАЖ 27 - ПОМ. LXXXVI"
+      },
+      "inn": "7811365157",
+      "kpp": "771801001",
+      "ogrn": "1079847067046",
+      "okpo": "98625200",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b8284cf8-c40f-11ed-0a80-0759002a5c75/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 1,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [
+        "дистрибьютеры"
+      ],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b8284cf8-c40f-11ed-0a80-0759002a5c75/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b8284cf8-c40f-11ed-0a80-0759002a5c75/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 0.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b8284cf8-c40f-11ed-0a80-0759002a5c75/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/c920b23e-06b1-11ee-0a80-0f0f001e2b42",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=c920b23e-06b1-11ee-0a80-0f0f001e2b42"
+      },
+      "id": "c920b23e-06b1-11ee-0a80-0f0f001e2b42",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-06-09 13:38:34.867",
+      "name": "Xiaomi Люблино",
+      "externalCode": "vISaPwnahesTo6LkSVKgB1",
+      "archived": false,
+      "created": "2023-06-09 13:38:34.867",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/c920b23e-06b1-11ee-0a80-0f0f001e2b42/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/c920b23e-06b1-11ee-0a80-0f0f001e2b42/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/c920b23e-06b1-11ee-0a80-0f0f001e2b42/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 0.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/c920b23e-06b1-11ee-0a80-0f0f001e2b42/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/d7b679ce-0051-11ee-0a80-0dc600060395",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=d7b679ce-0051-11ee-0a80-0dc600060395"
+      },
+      "id": "d7b679ce-0051-11ee-0a80-0dc600060395",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-06-01 10:56:53.113",
+      "name": "Apple Lot",
+      "externalCode": "lBNEZHPOhhXGEvi7RVb9N2",
+      "archived": false,
+      "created": "2023-06-01 10:56:40.646",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/d7b679ce-0051-11ee-0a80-0dc600060395/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [
+        "горбушка",
+        "дубай"
+      ],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/d7b679ce-0051-11ee-0a80-0dc600060395/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/d7b679ce-0051-11ee-0a80-0dc600060395/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 0.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/d7b679ce-0051-11ee-0a80-0dc600060395/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/e1d18e17-1b10-11ee-0a80-0ecd00098f51",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=e1d18e17-1b10-11ee-0a80-0ecd00098f51"
+      },
+      "id": "e1d18e17-1b10-11ee-0a80-0ecd00098f51",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-07-05 11:49:41.703",
+      "name": "Горбушка Mellvmo",
+      "externalCode": "o-0HnuEngqUrS-4A0EXIq1",
+      "archived": false,
+      "created": "2023-07-05 11:49:41.703",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/e1d18e17-1b10-11ee-0a80-0ecd00098f51/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/e1d18e17-1b10-11ee-0a80-0ecd00098f51/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/e1d18e17-1b10-11ee-0a80-0ecd00098f51/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 0.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/e1d18e17-1b10-11ee-0a80-0ecd00098f51/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/e7194126-10e8-11ee-0a80-0fbd000d6198",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=e7194126-10e8-11ee-0a80-0fbd000d6198"
+      },
+      "id": "e7194126-10e8-11ee-0a80-0fbd000d6198",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-06-22 13:38:19.081",
+      "name": "Майя Дубай",
+      "externalCode": "oaXEWE3uhLVl9Mv0xzZZN3",
+      "archived": false,
+      "created": "2023-06-22 13:38:19.081",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/e7194126-10e8-11ee-0a80-0fbd000d6198/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/e7194126-10e8-11ee-0a80-0fbd000d6198/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/e7194126-10e8-11ee-0a80-0fbd000d6198/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 39269600,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/e7194126-10e8-11ee-0a80-0fbd000d6198/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee2b924e-06b6-11ee-0a80-1098001fb4d6",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=ee2b924e-06b6-11ee-0a80-1098001fb4d6"
+      },
+      "id": "ee2b924e-06b6-11ee-0a80-1098001fb4d6",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-06-09 14:15:24.462",
+      "name": "Розничный покупатель",
+      "externalCode": "F-CywvwyjOlJ-tguX0t1g2",
+      "archived": false,
+      "created": "2023-06-09 14:15:24.462",
+      "companyType": "legal",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee2b924e-06b6-11ee-0a80-1098001fb4d6/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee2b924e-06b6-11ee-0a80-1098001fb4d6/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee2b924e-06b6-11ee-0a80-1098001fb4d6/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 6598750.0,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee2b924e-06b6-11ee-0a80-1098001fb4d6/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ffc07159-f95b-11ed-0a80-14e5000e4ef4",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=ffc07159-f95b-11ed-0a80-14e5000e4ef4"
+      },
+      "id": "ffc07159-f95b-11ed-0a80-14e5000e4ef4",
+      "accountId": "1d400323-7654-11ed-0a80-0d1f00010225",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/57407569-85e5-11ed-0a80-0dbe006f0f8b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=57407569-85e5-11ed-0a80-0dbe006f0f8b"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/1d40424f-7654-11ed-0a80-0d1f00010226",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2023-05-23 14:26:32.835",
+      "name": "ИП Чураев Магомед Магомед-Загидович",
+      "externalCode": "gfyuRjY8h3NgP9lM9rbDx0",
+      "archived": false,
+      "created": "2023-05-23 14:21:44.637",
+      "companyType": "entrepreneur",
+      "legalTitle": "Индивидуальный предприниматель Чураев Магомед Магомед-Загидович",
+      "legalAddress": "368354, Россия, Респ Дагестан, Гунибский р-н, село Согратль",
+      "legalAddressFull": {
+        "postalCode": "368354",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=9df7c2c3-7782-4c5c-a8ed-1102af611608"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000005",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "Гунибский р-н, село Согратль"
+      },
+      "inn": "051002271881",
+      "okpo": "2006848828",
+      "ogrnip": "321057100027452",
+      "legalLastName": "Чураев",
+      "legalFirstName": "Магомед",
+      "legalMiddleName": "Магомед-Загидович",
+      "accounts": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ffc07159-f95b-11ed-0a80-14e5000e4ef4/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 1,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [
+        "drop"
+      ],
+      "contactpersons": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ffc07159-f95b-11ed-0a80-14e5000e4ef4/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ffc07159-f95b-11ed-0a80-14e5000e4ef4/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 99836400,
+      "files": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ffc07159-f95b-11ed-0a80-14e5000e4ef4/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    }
+  ]
+}

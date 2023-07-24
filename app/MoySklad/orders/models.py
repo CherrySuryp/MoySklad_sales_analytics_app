@@ -10,6 +10,7 @@ class Orders(Base):
     ms_id = Column(String, unique=True, nullable=False)
     user_id = Column(ForeignKey('users.id'), nullable=False)
     order_name = Column(String, nullable=False)
+    counterparty = Column(ForeignKey('counterparties.ms_id'), nullable=False)
     order_date = Column(Date, nullable=False)
 
 
