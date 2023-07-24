@@ -1,10 +1,8 @@
-import json
-
 from fastapi import APIRouter, Depends
+from celery import chain
 
-from app.MoySklad.purchases.tasks import get_purchases
+from app.MoySklad.purchases.tasks import get_purchases, get_purchase_details
 from app.users.dependencies import get_current_user
-import requests
 
 router = APIRouter(
     tags=['Moy Sklad'],
@@ -18,9 +16,11 @@ async def add_purchases(user_data=Depends(get_current_user)):
     ms_token = user_data['ms_token']
     max_time_range = user_data['max_time_range']
 
-    get_purchases.delay(user_id, max_time_range, ms_token)
+    chain(
+        get_purchases.s(user_id, max_time_range, ms_token),
+        get_purchase_details.s(ms_token)
+    ).apply_async()
 
     return {
         'Detail': 'Task scheduled'
     }
-
