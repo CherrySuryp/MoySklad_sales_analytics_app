@@ -60,7 +60,7 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
 
                             if not order_exists and counterparty_exists:
                                 data.append(order_data)
-                                content.append(order_data)
+                                content.append(order_data['ms_id'])
                             else:
                                 pass
 
