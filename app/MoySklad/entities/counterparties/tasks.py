@@ -52,7 +52,7 @@ def get_counterparties(user_id: int, ms_token: str):
                             pass
                     if data:
                         offset += 1000
-                        await CounterpartiesDAO.add_counterparties(data)
+                        await CounterpartiesDAO.add_many(data)
                         print(f"Added {len(data)} counterparties")
                     else:
                         offset += 1000

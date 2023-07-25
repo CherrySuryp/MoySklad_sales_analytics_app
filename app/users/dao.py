@@ -13,7 +13,7 @@ class UsersDAO(BaseDAO):
     model = Users
 
     @classmethod
-    async def add(
+    async def add_user(
             cls,
             email: str,
             password: str,
