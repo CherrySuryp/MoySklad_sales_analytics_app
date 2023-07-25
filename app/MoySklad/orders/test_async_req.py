@@ -2,29 +2,6 @@ import asyncio
 import json
 
 import aiohttp
-
-# async def test():
-#     async with aiohttp.ClientSession() as session:
-#         request = await session.get(
-#             f"https://online.moysklad.ru/api/remap/1.2/entity/demand",
-#             headers={
-#                 "Authorization": f"Bearer b707d396a2dde40ddd0d95e91badc6c7d345db4a"
-#             },
-#             params={
-#                 'limit': 1,
-#                 'offset': 2
-#             }
-#         )
-#         request = await request.json()
-#         request = request['rows']
-#
-#         print(len(request))
-#
-#
-# asyncio.run(test())
-
-import asyncio
-import aiohttp
 import time
 
 
@@ -68,10 +45,25 @@ async def send_requests():
         return len(res)
 
 
-start_time = time.time()
-loop = asyncio.get_event_loop()
-results = loop.run_until_complete(send_requests())
-elapsed_time = time.time() - start_time
+def partition(n):
+    with open('dataset.json', 'r', encoding='utf8') as file:
+        ids = json.load(file)
 
-print(f"Время выполнения: {elapsed_time} сек.")
-print(results)
+    for piece in range(0, len(ids), n):
+        yield ids[piece:piece + n]
+
+
+slices = list(partition(200))
+for i in slices:
+    print(len(i))
+
+with open('res.json', 'w', encoding='utf8') as f:
+    json.dump(slices, f, ensure_ascii=False, indent=2)
+
+# start_time = time.time()
+# loop = asyncio.get_event_loop()
+# results = loop.run_until_complete(send_requests())
+# elapsed_time = time.time() - start_time
+#
+# print(f"Время выполнения: {elapsed_time} сек.")
+# print(results)
