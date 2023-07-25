@@ -1,5 +1,6 @@
 import asyncio
 import requests
+from tqdm import tqdm
 
 from app.MoySklad.entities.counterparties.dao import CounterpartiesDAO
 from app.MoySklad.entities.items.dao import ItemsDAO
@@ -89,7 +90,7 @@ def get_purchase_details(content: list, ms_token: str):
     async def async_get_purchase_details():
         count = 0
         with requests.session() as session:
-            for i in range(len(content)):
+            for i in tqdm(range(len(content)), desc='Fetching Data...', colour='GREEN'):
                 purchase_ms_id = content[i]['ms_id']
                 request = session.get(
                     f"https://online.moysklad.ru/api/remap/1.2/entity/supply/"
@@ -101,12 +102,10 @@ def get_purchase_details(content: list, ms_token: str):
                 request = request.json()['rows']
 
                 count += 1
-                print(f"Request No: {count}")
 
                 for a in range(len(request)):
                     item_ms_id = request[a]['assortment']['meta']['href']
                     item_ms_id = item_ms_id.split('/')[-1]
-                    # try:
                     purchase_details = {
                         "purchase_ms_id": purchase_ms_id,
                         'item_ms_id': item_ms_id,

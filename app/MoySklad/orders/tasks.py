@@ -106,7 +106,6 @@ def get_order_details(content: list, ms_token: str):
                 for a in range(len(request)):
                     product_ms_id = request[a]['assortment']['meta']['href']
                     product_ms_id = product_ms_id.split('/')[-1]
-                    # try:
                     order_details = {
                         "order_ms_id": order_ms_id,
                         'product_ms_id': product_ms_id,
