@@ -1,5 +1,7 @@
 import asyncio
-import requests
+import json
+
+import aiohttp
 from tqdm import tqdm
 
 from app.MoySklad.entities.counterparties.dao import CounterpartiesDAO
@@ -19,12 +21,12 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
             datetime.utcnow() - timedelta(days=max_time_range),
             '%Y-%m-%d'
         )
-        with requests.session() as session:
+        async with aiohttp.ClientSession() as session:
             offset = 0
 
             while True:
                 data = []
-                request = session.get(
+                request = await session.get(
                     f"https://online.moysklad.ru/api/remap/1.2/entity/demand"
                     f"?filter=moment>={date}",
                     headers={
@@ -34,7 +36,8 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
                         'offset': offset
                     }
                 )
-                request = request.json()['rows']
+                request = await request.json()
+                request = request['rows']
                 print(f'Received {len(request)} orders')
 
                 if request:
@@ -76,7 +79,10 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
                     break
 
     asyncio.get_event_loop().run_until_complete(async_get_orders())
+
     print(f'Total returned content: {len(content)}')
+    with open('app/MoySklad/orders/dataset.json', 'w', encoding='utf8') as f:
+        json.dump(content, f, ensure_ascii=False, indent=2)
     return content
 
 
@@ -89,17 +95,18 @@ def get_order_details(content: list, ms_token: str):
 
     async def async_get_order_details():
         count = 0
-        with requests.session() as session:
-            for i in tqdm(range(len(content)) , desc='Fetching data...', colour='GREEN'):
+        async with aiohttp.ClientSession() as session:
+            for i in tqdm(range(len(content)), desc='Fetching data...', colour='GREEN'):
                 order_ms_id = content[i]['ms_id']
-                request = session.get(
+                request = await session.get(
                     f"https://online.moysklad.ru/api/remap/1.2/entity/demand/"
                     f"{order_ms_id}/positions",
                     headers={
                         "Authorization": f"Bearer {ms_token}"
                     },
                 )
-                request = request.json()['rows']
+                request = await request.json()
+                request = request['rows']
 
                 count += 1
 
