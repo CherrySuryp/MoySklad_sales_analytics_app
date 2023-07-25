@@ -61,7 +61,7 @@ def get_items(user_id: int, ms_token: str, user_limit: int):
 
                     if len(content) > 0:
                         offset += 1000
-                        await ItemsDAO.add_items(content)
+                        await ItemsDAO.add_many(content)
                         print(f"Added {len(content)} item(s)")
                     else:
                         offset += 1000

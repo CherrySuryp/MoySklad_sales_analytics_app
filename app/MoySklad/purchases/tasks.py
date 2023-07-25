@@ -65,7 +65,7 @@ def get_purchases(user_id: int, max_time_range: int, ms_token: str):
                             pass
                     if data:
                         offset += 1000
-                        await PurchasesDAO.add(data)
+                        await PurchasesDAO.add_many(data)
                         print(f"Added {len(data)} order(s)")
                     else:
                         offset += 1000
@@ -125,13 +125,8 @@ def get_purchase_details(content: list, ms_token: str):
                         pass
                     else:
                         data.append(purchase_details)
-
-            # except IndentationError:
-            #     print(f'Failed to add order_details')
-            #     pass
-
         if data:
-            await PurchaseDetailsDAO.add(data)
+            await PurchaseDetailsDAO.add_many(data)
             print(f"Added {len(data)} order details")
         else:
             print('No order details to add')

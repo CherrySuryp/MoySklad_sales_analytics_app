@@ -1,5 +1,6 @@
 import asyncio
 import requests
+from tqdm import tqdm
 
 from app.MoySklad.entities.counterparties.dao import CounterpartiesDAO
 from app.MoySklad.orders.dao import OrdersDAO, OrderDetailsDAO
@@ -65,7 +66,7 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
                             pass
                     if data:
                         offset += 1000
-                        await OrdersDAO.add_orders(data)
+                        await OrdersDAO.add_many(data)
                         print(f"Added {len(data)} order(s)")
                     else:
                         offset += 1000
@@ -89,7 +90,7 @@ def get_order_details(content: list, ms_token: str):
     async def async_get_order_details():
         count = 0
         with requests.session() as session:
-            for i in range(len(content)):
+            for i in tqdm(range(len(content)) , desc='Fetching data...', colour='GREEN'):
                 order_ms_id = content[i]['ms_id']
                 request = session.get(
                     f"https://online.moysklad.ru/api/remap/1.2/entity/demand/"
@@ -101,7 +102,6 @@ def get_order_details(content: list, ms_token: str):
                 request = request.json()['rows']
 
                 count += 1
-                print(f"Request No: {count}")
 
                 for a in range(len(request)):
                     product_ms_id = request[a]['assortment']['meta']['href']
@@ -125,13 +125,8 @@ def get_order_details(content: list, ms_token: str):
                         pass
                     else:
                         data.append(order_details)
-
-            # except IndentationError:
-            #     print(f'Failed to add order_details')
-            #     pass
-
         if data:
-            await OrderDetailsDAO.add_order_details(data)
+            await OrderDetailsDAO.add_many(data)
             print(f"Added {len(data)} order details")
         else:
             print('No order details to add')

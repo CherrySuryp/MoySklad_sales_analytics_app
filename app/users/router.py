@@ -26,7 +26,7 @@ async def reg_user(user_data: SRegUser):
             detail='User already exists'
         )
     hashed_passwd = encrypt_password(user_data.password)
-    await UsersDAO.add(email=user_data.email, password=hashed_passwd)
+    await UsersDAO.add_many(email=user_data.email, password=hashed_passwd)
     return {"Detail": "User Registered"}
 
 
