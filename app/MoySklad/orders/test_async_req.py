@@ -4,6 +4,8 @@ import json
 import aiohttp
 import time
 
+from tqdm import tqdm
+
 
 async def make_request(session, ms_id):
     async with session.get(
@@ -23,12 +25,12 @@ async def make_request(session, ms_id):
 async def send_requests():
     with open('dataset.json', 'r', encoding='utf8') as f:
         ids = json.load(f)
-        print(f'{len(ids)} requests')
+        print(f'{len(ids)} requests per chunk')
     async with aiohttp.ClientSession() as session:
         tasks = []
         request_interval = 3 / 45  # Интервал между запросами в секундах
 
-        for ms_id in ids:
+        for ms_id in tqdm(ids, desc='Async gather fetching data...', colour='GREEN'):
             task = asyncio.ensure_future(make_request(session, ms_id))
             tasks.append(task)
             await asyncio.sleep(request_interval)  # Ожидание перед следующим запросом
@@ -53,17 +55,17 @@ def partition(n):
         yield ids[piece:piece + n]
 
 
-slices = list(partition(200))
-for i in slices:
-    print(len(i))
-
-with open('res.json', 'w', encoding='utf8') as f:
-    json.dump(slices, f, ensure_ascii=False, indent=2)
-
-# start_time = time.time()
-# loop = asyncio.get_event_loop()
-# results = loop.run_until_complete(send_requests())
-# elapsed_time = time.time() - start_time
+# slices = list(partition(200))
+# for i in slices:
+#     print(len(i))
 #
-# print(f"Время выполнения: {elapsed_time} сек.")
-# print(results)
+# with open('res.json', 'w', encoding='utf8') as f:
+#     json.dump(slices, f, ensure_ascii=False, indent=2)
+
+start_time = time.time()
+loop = asyncio.get_event_loop()
+results = loop.run_until_complete(send_requests())
+elapsed_time = time.time() - start_time
+
+print(f"Время выполнения: {elapsed_time} сек.")
+print(results)
