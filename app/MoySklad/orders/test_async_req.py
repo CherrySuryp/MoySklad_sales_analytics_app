@@ -34,7 +34,7 @@ async def send_requests():
     with open('dataset.json', 'r', encoding='utf8') as f:
         ids = json.load(f)
 
-    chunk_size = 200
+    chunk_size = 50
     chunks = list(slice_list_to_chunks(ids, chunk_size))
 
     print(f'{len(ids)} requests to make')
