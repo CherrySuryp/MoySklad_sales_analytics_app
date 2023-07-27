@@ -92,7 +92,7 @@ def get_order_details(content: list, ms_token: str):
     data = []
 
     async def async_get_order_details():
-        count = 0
+        count = 1
         async with aiohttp.ClientSession() as session:
             for order_ms_id in content:
                 request = await session.get(
@@ -104,7 +104,7 @@ def get_order_details(content: list, ms_token: str):
                 )
                 request = await request.json()
                 request = request['rows']
-
+                print(f'Request No: {count}')
                 count += 1
 
                 for a in range(len(request)):
