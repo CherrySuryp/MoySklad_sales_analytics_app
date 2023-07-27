@@ -1,10 +1,15 @@
 import asyncio
 import json
-
-import aiohttp
+import os
 import time
 
+import aiohttp
 from tqdm import tqdm
+
+"""
+Not going to use it because MoySklad API works unstable with async requests
+Left it here for future use
+"""
 
 
 async def make_request(session, ms_id):
@@ -34,7 +39,7 @@ async def send_requests():
     with open('dataset.json', 'r', encoding='utf8') as f:
         ids = json.load(f)
 
-    chunk_size = 50
+    chunk_size = 25
     chunks = list(slice_list_to_chunks(ids, chunk_size))
 
     print(f'{len(ids)} requests to make')
@@ -45,18 +50,18 @@ async def send_requests():
         async with aiohttp.ClientSession() as session:
 
             tasks = []
-            request_interval = 3 / 45  # Интервал между запросами в секундах
+            request_interval = 3 / 45
 
             for ms_id in chunk:
                 task = asyncio.ensure_future(make_request(session, ms_id))
                 tasks.append(task)
-                await asyncio.sleep(request_interval)  # Ожидание перед следующим запросом
+                await asyncio.sleep(request_interval)
 
             result.extend(await asyncio.gather(*tasks))
 
             await session.close()
 
-    with open('res.json', 'w', encoding='utf8') as f:
+    with open('result.json', 'w', encoding='utf8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
     elapsed_time = time.time() - start_time
@@ -65,7 +70,6 @@ async def send_requests():
     print(f"Requests made: {len(ids)}")
     print(f"Requests per async task: {chunk_size}")
     print(f'Actual RPS: {len(ids) / elapsed_time}')
-
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(send_requests())
