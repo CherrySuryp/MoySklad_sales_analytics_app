@@ -81,8 +81,6 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
     asyncio.get_event_loop().run_until_complete(async_get_orders())
 
     print(f'Total returned content: {len(content)}')
-    with open('app/MoySklad/orders/dataset.json', 'w', encoding='utf8') as f:
-        json.dump(content, f, ensure_ascii=False, indent=2)
     return content
 
 
@@ -96,8 +94,7 @@ def get_order_details(content: list, ms_token: str):
     async def async_get_order_details():
         count = 0
         async with aiohttp.ClientSession() as session:
-            for i in tqdm(range(len(content)), desc='Fetching data...', colour='GREEN'):
-                order_ms_id = content[i]['ms_id']
+            for order_ms_id in content:
                 request = await session.get(
                     f"https://online.moysklad.ru/api/remap/1.2/entity/demand/"
                     f"{order_ms_id}/positions",
@@ -119,14 +116,12 @@ def get_order_details(content: list, ms_token: str):
                         'quantity': request[a]['quantity'],
                         'sum': request[a]['price'],
                     }
-
                     order_details_exists = await OrderDetailsDAO.find_one_or_none(
                         order_ms_id=order_ms_id,
                         product_ms_id=order_details['product_ms_id']
                     )
 
                     item_exists = await ItemsDAO.find_one_or_none(ms_id=product_ms_id)
-
                     if order_details_exists or not item_exists:
                         pass
                     else:
