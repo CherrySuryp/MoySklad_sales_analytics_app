@@ -1,8 +1,6 @@
 import asyncio
-import json
 
 import aiohttp
-from tqdm import tqdm
 
 from app.MoySklad.entities.counterparties.dao import CounterpartiesDAO
 from app.MoySklad.orders.dao import OrdersDAO, OrderDetailsDAO
