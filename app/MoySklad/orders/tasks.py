@@ -1,6 +1,6 @@
 import asyncio
-import requests
-from tqdm import tqdm
+
+import aiohttp
 
 from app.MoySklad.entities.counterparties.dao import CounterpartiesDAO
 from app.MoySklad.orders.dao import OrdersDAO, OrderDetailsDAO
@@ -19,12 +19,12 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
             datetime.utcnow() - timedelta(days=max_time_range),
             '%Y-%m-%d'
         )
-        with requests.session() as session:
+        async with aiohttp.ClientSession() as session:
             offset = 0
 
             while True:
                 data = []
-                request = session.get(
+                request = await session.get(
                     f"https://online.moysklad.ru/api/remap/1.2/entity/demand"
                     f"?filter=moment>={date}",
                     headers={
@@ -34,7 +34,8 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
                         'offset': offset
                     }
                 )
-                request = request.json()['rows']
+                request = await request.json()
+                request = request['rows']
                 print(f'Received {len(request)} orders')
 
                 if request:
@@ -57,7 +58,7 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
 
                             if not order_exists and counterparty_exists:
                                 data.append(order_data)
-                                content.append(order_data)
+                                content.append(order_data['ms_id'])
                             else:
                                 pass
 
@@ -76,6 +77,7 @@ def get_orders(user_id: int, max_time_range: int, ms_token: str):
                     break
 
     asyncio.get_event_loop().run_until_complete(async_get_orders())
+
     print(f'Total returned content: {len(content)}')
     return content
 
@@ -88,19 +90,19 @@ def get_order_details(content: list, ms_token: str):
     data = []
 
     async def async_get_order_details():
-        count = 0
-        with requests.session() as session:
-            for i in tqdm(range(len(content)) , desc='Fetching data...', colour='GREEN'):
-                order_ms_id = content[i]['ms_id']
-                request = session.get(
+        count = 1
+        async with aiohttp.ClientSession() as session:
+            for order_ms_id in content:
+                request = await session.get(
                     f"https://online.moysklad.ru/api/remap/1.2/entity/demand/"
                     f"{order_ms_id}/positions",
                     headers={
                         "Authorization": f"Bearer {ms_token}"
                     },
                 )
-                request = request.json()['rows']
-
+                request = await request.json()
+                request = request['rows']
+                print(f'Request No: {count}')
                 count += 1
 
                 for a in range(len(request)):
@@ -112,14 +114,12 @@ def get_order_details(content: list, ms_token: str):
                         'quantity': request[a]['quantity'],
                         'sum': request[a]['price'],
                     }
-
                     order_details_exists = await OrderDetailsDAO.find_one_or_none(
                         order_ms_id=order_ms_id,
                         product_ms_id=order_details['product_ms_id']
                     )
 
                     item_exists = await ItemsDAO.find_one_or_none(ms_id=product_ms_id)
-
                     if order_details_exists or not item_exists:
                         pass
                     else:

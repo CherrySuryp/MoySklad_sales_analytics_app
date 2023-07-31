@@ -24,7 +24,7 @@ async def add_orders_and_order_details(user_data: SUser = Depends(get_current_us
     chain(
         get_orders.s(user_id, max_time_range, ms_token),
         get_order_details.s(ms_token)
-    ).apply_async()
+    ).delay()
 
     return {
         "Detail": "Task scheduled"
